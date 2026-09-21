@@ -1,0 +1,76 @@
+:root {
+  --navy: #003b5c;
+  --navy-deep: #002b43;
+  --blue: #007fa3;
+  --red: #ba0c2f;
+  --cream: #f8f7f2;
+  --paper: #fffefa;
+  --ink: #173042;
+  --muted: #60717c;
+  --line: #d8e0e1;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+.site-header, main, .site-footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+.site-header { height: 88px; display: flex; align-items: center; justify-content: space-between; }
+.brand { color: var(--navy); display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 700; letter-spacing: -.02em; }
+.brand-mark { width: 30px; height: 30px; display: grid; place-items: center; color: white; background: var(--red); font-family: Georgia, serif; font-size: 20px; }
+.year-badge { color: var(--muted); font-size: 11px; letter-spacing: .12em; }
+.hero { display: flex; justify-content: space-between; align-items: end; padding: 76px 0 86px; border-top: 1px solid var(--line); }
+.eyebrow { margin: 0 0 18px; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+h1, h2 { margin: 0; color: var(--navy-deep); font-family: "Gowun Batang", serif; font-weight: 700; letter-spacing: -.05em; }
+h1 { font-size: clamp(38px, 5vw, 68px); line-height: 1.18; }
+h1 em { color: var(--red); font-style: normal; }
+.intro { max-width: 470px; margin: 26px 0 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.hero-note { display: flex; gap: 14px; align-items: start; padding-bottom: 10px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.hero-note p { margin: 0; }
+.hero-note strong { color: var(--navy); font-weight: 600; }
+.note-line { width: 26px; height: 1px; margin-top: 9px; background: var(--red); }
+.report { padding: 42px 0 80px; border-top: 1px solid var(--line); }
+.section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 28px; }
+.section-heading .eyebrow { margin-bottom: 10px; }
+h2 { font-size: 32px; }
+.data-status { margin: 0; color: var(--muted); font-size: 12px; }
+.filters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.filter-field { display: grid; gap: 9px; }
+.filter-field span { color: var(--muted); font-size: 12px; font-weight: 600; }
+select { width: 100%; height: 52px; padding: 0 16px; border: 1px solid var(--line); border-radius: 0; color: var(--navy); background: var(--paper); font: inherit; cursor: pointer; }
+select:focus { outline: 2px solid var(--blue); outline-offset: 2px; }
+select:disabled { color: #9ca9ad; cursor: not-allowed; background: #f1f2ee; }
+.result-panel { min-height: 240px; margin-top: 18px; padding: 34px; border-top: 4px solid var(--navy); background: var(--paper); }
+.result-panel.empty { display: grid; place-items: center; }
+.result-empty { text-align: center; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.result-empty p { margin: 10px 0 0; }
+.result-icon { display: inline-grid; place-items: center; width: 38px; height: 38px; color: white; background: var(--blue); font-size: 22px; }
+.result-content { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; }
+.result-location { margin: 0 0 9px; color: var(--muted); font-size: 13px; }
+.result-title { margin: 0; color: var(--navy); font-family: "Gowun Batang", serif; font-size: 24px; }
+.price-label { margin: 0 0 2px; color: var(--muted); font-size: 12px; }
+.price { margin: 0; color: var(--red); font-size: clamp(32px, 5vw, 52px); font-weight: 700; letter-spacing: -.06em; }
+.price small { margin-left: 5px; color: var(--ink); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+.transaction-count { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+.site-footer { display: flex; justify-content: space-between; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.site-footer p { margin: 0; }
+.footer-source { letter-spacing: .12em; }
+
+@media (max-width: 680px) {
+  .site-header, main, .site-footer { width: min(100% - 32px, 1120px); }
+  .site-header { height: 72px; }
+  .year-badge { display: none; }
+  .hero { display: block; padding: 54px 0 58px; }
+  .hero-note { margin-top: 34px; }
+  .section-heading { display: block; }
+  .data-status { margin-top: 14px; }
+  .filters { grid-template-columns: 1fr; }
+  .result-content { grid-template-columns: 1fr; }
+  .price { font-size: 42px; }
+  .site-footer { display: block; }
+  .footer-source { margin-top: 10px !important; }
+}
